@@ -14,6 +14,10 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false);
 
   const addGoalHandler = goalTitle => {
+    if(goalTitle.length === 0) {
+      alert('Please enter a goal');
+      return;
+    }
     //console.log(enteredGoal);
     // Get latest state snapshot of courseGoals and append enteredGoal to it
     // All state changes applied at once -> renders once not twice.
